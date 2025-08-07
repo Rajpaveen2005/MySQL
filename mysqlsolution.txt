@@ -1,0 +1,17 @@
+select subject_code as codee , subject_name as namee ,subject_obtmarks,
+case
+	when subject_obtmarks >= 90 then 'High'
+    else 'low'
+    end as dettails
+from senior
+where subject_name like '%s' and 
+	subject_name in ('Maths', 'SS')
+    and subject_code = 5 ;
+
+alter table higher
+add constraint fk
+foreign key (sub_code) references senior (subject_code);
+desc higher;
+
+	
+================================
